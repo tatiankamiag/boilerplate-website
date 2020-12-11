@@ -28,4 +28,4 @@ jobs:
         password: ${{ secrets.WORDPRESS_PASSWORD }}
         username: ${{ secrets.WORDPRESS_USERNAME }}
         local-dir: /app/public/
-        server-dir: /app/public
+        server-dir: /app/public/
