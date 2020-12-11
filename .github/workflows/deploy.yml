@@ -15,12 +15,24 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  deploy:
+deploy:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Deploy
-      uses: rtCamp/action-deploy-wordpress@v2.0.2
+    - uses: actions/checkout@master
+    - name: WordPress Plugin Deploy
+      uses: varunsridharan/action-wp-org-deploy@master
+      with:
+        WORDPRESS_PASSWORD: ${{ secrets.WORDPRESS_PASSWORD }}
+        WORDPRESS_USERNAME: ${{ secrets.WORDPRESS_USERNAME }}
+        SLUG: my-super-cool-plugin
       env:
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  
+#    runs-on: ubuntu-latest
+#    steps:
+#    - uses: actions/checkout@v2
+#    - name: Deploy
+#      uses: rtCamp/action-deploy-wordpress@v2.0.2
+#      env:
+#        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}##
