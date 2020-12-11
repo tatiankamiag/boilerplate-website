@@ -27,5 +27,5 @@ jobs:
         port: 21
         password: ${{ secrets.WORDPRESS_PASSWORD }}
         username: ${{ secrets.WORDPRESS_USERNAME }}
-        local-dir: /app/public/
-        server-dir: /app/public/
+        local-dir: ./app/public/
+        server-dir: ./app/public/
