@@ -21,8 +21,9 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: WordPress Plugin Deploy
-      uses: files.000webhost.com:21
+      uses: varunsridharan/action-wp-org-deploy@master
       with:
+        server: files.000webhost.com:21
         WORDPRESS_PASSWORD: ${{ secrets.WORDPRESS_PASSWORD }}
         WORDPRESS_USERNAME: ${{ secrets.WORDPRESS_USERNAME }}
         SLUG: my-super-cool-plugin
